@@ -1,23 +1,21 @@
-let frame = -1;
 let speed = 1;
 
-function nextframe() {
-	frame++;
+var first = true;
+var oldX = 477;
 
+function nextframe() {
 	let mario = document.getElementById("marioSPR");
 	let hitboxG = document.getElementById("marioBOXg");
 	let hitboxB = document.getElementById("marioBOXb");
 
-	hitboxB.style.visibility = "hidden";
-
-	var collided = false;
-	var x = 477 - speed * 40 * frame;
-	if (checkWallOverlap(x)) {
-		collided = true;
+	var x = oldX - speed * 40 * (first? 0 : 1);
+	if (hitboxB.style.visibility == "unset") {
 		x = 150;
 	}
 	var xHB = x - speed * 40;
 	var y = 38;
+
+	hitboxB.style.visibility = "hidden";
 
 	mario.style.left = x + "px";
 	mario.style.top = y + "px";
@@ -29,13 +27,13 @@ function nextframe() {
 		hitboxB.style.visibility = "unset";
 	}
 
-	if (collided) {
-		frame--;
-	}
+	first = false;
+	oldX = x;
 }
 
 function changeSpeed(changeBy) {
-	frame = -1;
+	oldX = 477;
+	first = true;
 	speed += changeBy;
 	if (speed <= 1) {
 		speed = 1;
@@ -47,14 +45,19 @@ function changeSpeed(changeBy) {
 }
 
 function checkWallOverlap(x) {
-	var linex = x;
-	var linew = x + 62;
-	var linei = linex + (linew - linex) * 0.5;
+	let linex = x;
+	let linew = x + 62;
+	let linei = linex + (linew - linex) * 0.5;
 
-	var wallx = 100;
-	var wallw = wallx + 50;
+	let wallx = 100;
+	let wallw = wallx + 50;
 
 	return (linex >= wallx && linex <= wallw) || (linei >= wallx && linei <= wallw) || (linew >= wallx && linew <= wallw);
+}
+
+let urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get("hidecredit") === "true") {
+	document.getElementById("credit").style.visibility = "hidden";
 }
 
 nextframe();

@@ -1,7 +1,7 @@
 body {
 	width: 500px;
-	height: 175px;
-	background-color: #505050;
+	height: 200px;
+	background-color: #484848;
 }
 
 img {
@@ -50,4 +50,11 @@ img {
 	transform: scale(150%, 150%);
 	top: 155px;
 	left: 420px;
+}
+
+#credit {
+	position: absolute;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 190px;
 }
