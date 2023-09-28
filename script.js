@@ -59,5 +59,17 @@ let urlParams = new URLSearchParams(window.location.search);
 if (urlParams.get("hidecredit") === "true") {
 	document.getElementById("credit").style.visibility = "hidden";
 }
+if (urlParams.has("bgcolor")) {
+	document.body.style.backgroundColor = "#" + urlParams.get("bgcolor");
+}
+if (urlParams.has("initialspeed")) {
+	speed = parseFloat(urlParams.get("initialspeed"));
+	if (speed <= 1 || isNaN(speed)) {
+		speed = 1;
+	}
+	if (speed >= 11) {
+		speed = 11;
+	}
+}
 
 nextframe();
