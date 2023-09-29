@@ -10,9 +10,34 @@ img {
 	image-rendering: pixelated;
 }
 
+#marioStep4 {
+	position: absolute;
+	transform: scale(200%, 200%);
+	top: 38px;
+	opacity: 0.5;
+}
+#marioStep3 {
+	position: absolute;
+	transform: scale(200%, 200%);
+	top: 38px;
+	opacity: 0.4;
+}
+#marioStep2 {
+	position: absolute;
+	transform: scale(200%, 200%);
+	top: 38px;
+	opacity: 0.3;
+}
+#marioStep1 {
+	position: absolute;
+	transform: scale(200%, 200%);
+	top: 38px;
+	opacity: 0.2;
+}
 #marioSPR {
 	position: absolute;
 	transform: scale(200%, 200%);
+	top: 38px;
 }
 
 #marioBOXg {
@@ -29,20 +54,7 @@ img {
 	position: absolute;
 	transform: scale(200%, 200%);
 	left: 100px;
-}
-
-#speedD {
-	position: absolute;
-	transform: scale(150%, 150%);
-	top: 155px;
-	left: 200px;
-}
-
-#speedU {
-	position: absolute;
-	transform: scale(150%, 150%);
-	top: 155px;
-	left: 350px;
+	top: 30px;
 }
 
 #nextframeButton {
@@ -57,9 +69,34 @@ img {
 	color: white;
 	font-family: Arial, Helvetica, sans-serif;
 	top: 190px;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;  
+	left: 90px;
+	text-shadow:
+	-1px -1px 0 #000,
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;  
+}
+
+#togithub {
+	position: absolute;
+	top: 188px;
+}
+
+#velocity {
+	position: absolute;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 155px;
+	left: 150px;
+	text-shadow:
+	-1px -1px 0 #000,
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;  
+}
+
+#speed {
+	position: absolute;
+	top: 155px;
+	left: 220px;
 }

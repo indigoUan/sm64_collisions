@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 
+<title>SM64 Esempio Collisioni</title>
+<meta content="SM64 Esempio Collisioni" property="og:title" />
+<meta content="Un coso fatto in cinque ore per visualizzare come funzionano all'incirca le collisioni in SM64" property="og:description" />
+<meta content="https://indigouan.github.io/sm64_collisions" property="og:url" />
+
 <html>
 	<div id="ui">
 		<button id="nextframeButton" type="button" onclick="nextframe()">Frame + 1</button>
-		<button id="speedD" type="button" onclick="changeSpeed(-1)">-</button>
-		<button id="speedU" type="button" onclick="changeSpeed(1)">+</button>
+		<input id="speed" type="range" min="1" max="16" value="1" class="slider" onchange="changeSpeed(this.value)">
+		<text id="velocity">Velocità:</text>
 		<text id="credit">By Gioele Neri (îndigoUán)</text>
+		<button id="togithub" type="button" onclick="window.open('https\:/\/github.com/indigoUan/sm64_collisions', '_blank')">repository</button>
 	</div>
 	<div id="visual">
-		<img id="marioBOXg" src="hitboxg.png" alt="">
-		<img id="marioBOXb" src="hitboxb.png" alt="">
+		<img id="marioStep4" src="mario.png" alt="">
+		<img id="marioStep3" src="mario.png" alt="">
+		<img id="marioStep2" src="mario.png" alt="">
+		<img id="marioStep1" src="mario.png" alt="">
 		<img id="marioSPR" src="mario.png" alt="">
+
 		<img id="wall" src="wall.png" alt="">
 	</div>
 </html>
